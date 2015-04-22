@@ -16,9 +16,9 @@ class Menu
     end
   end
 
-  def choose dish
+  def choose dish, quantity = 1
     fail unless dishes[dish]
-    choices << dish
+    choices << "#{quantity}× #{dish}"
     choices.join(", ")
   end
 end
