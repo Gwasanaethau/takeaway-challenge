@@ -8,5 +8,4 @@ class Menu
   def add dish, price
     dishes[dish] = price
   end
-
 end

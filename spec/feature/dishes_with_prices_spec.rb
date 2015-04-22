@@ -1,6 +1,7 @@
 # As a customer
 # So that I can check if I want to order something
 # I would like to see a list of dishes with prices
+
 feature 'customer can see a list of dishes with prices' do
   scenario 'which includes a hamburger' do
     menu = Menu.new

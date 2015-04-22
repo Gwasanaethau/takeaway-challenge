@@ -11,6 +11,4 @@ class Customer
     choices << "#{quantity}× #{dish}"
     choices.join(", ")
   end
-
 end
-
