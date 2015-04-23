@@ -10,12 +10,14 @@ feature 'customer can select from a list of dishes' do
 
   scenario 'select a hamburger' do
     menu.add 'hamburger', 5
-    expect(customer.choose 'hamburger').to eq '1× hamburger'
+    customer.choose 'hamburger'
+    expect(customer.choices).to include('hamburger' => 1)
   end
 
   scenario 'select a cheeseburger' do
     menu.add 'cheeseburger', 5.5
-    expect(customer.choose 'cheeseburger').to eq '1× cheeseburger'
+    customer.choose 'cheeseburger'
+    expect(customer.choices).to include('cheeseburger' => 1)
   end
 
   scenario 'cannot select an item not on the menu' do
@@ -26,12 +28,15 @@ feature 'customer can select from a list of dishes' do
   scenario 'select a hamburger and a cheeseburger' do
     menu.add 'hamburger', 5
     menu.add 'cheeseburger', 5.5
-    expect(customer.choose 'cheeseburger').to eq '1× cheeseburger'
-    expect(customer.choose 'hamburger').to eq '1× cheeseburger, 1× hamburger'
+    customer.choose 'cheeseburger'
+    expect(customer.choices).to include('cheeseburger' => 1)
+    customer.choose 'hamburger'
+    expect(customer.choices).to include('cheeseburger' => 1, 'hamburger' => 1)
   end
 
   scenario 'select two hamburgers' do
     menu.add 'hamburger', 5
-    expect(customer.choose 'hamburger', 2).to eq '2× hamburger'
+    customer.choose 'hamburger', 2
+    expect(customer.choices).to include('hamburger' => 2)
   end
 end
