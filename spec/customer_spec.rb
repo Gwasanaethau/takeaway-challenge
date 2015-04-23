@@ -27,7 +27,8 @@ describe Customer do
     customer.choose 'cheeseburger'
     customer.choose 'hamburger'
     expect(customer.choices).to include('cheeseburger' => [1, 5.5])
-    expect(customer.choices).to include('cheeseburger' => [1, 5.5], 'hamburger' => [1, 5])
+    expect(customer.choices).to include('cheeseburger' => [1, 5.5],
+                                        'hamburger' => [1, 5])
   end
 
   it 'can choose two hamburgers' do

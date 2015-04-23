@@ -1,7 +1,6 @@
 require 'printer'
 
 describe Printer do
-
   it 'shows hamburger as the only item' do
     menu = double(:menu, dishes: { 'hamburger' => 5 })
     expect(subject.show_menu menu).to eq 'hamburger: €5'
@@ -28,7 +27,8 @@ describe Printer do
   end
 
   it 'can choose a cheeseburger and a hamburger' do
-    order = double(:order, dishes: { 'hamburger' => [1, 5], 'cheeseburger' => [1, 5.5] })
+    order = double(:order, dishes: { 'hamburger' => [1, 5],
+                                     'cheeseburger' => [1, 5.5] })
     expect(subject.show_order order).to eq "1× hamburger\n1× cheeseburger"
   end
 

@@ -31,7 +31,8 @@ feature 'customer can select from a list of dishes' do
     customer.choose 'cheeseburger'
     expect(customer.choices).to include('cheeseburger' => [1, 5.5])
     customer.choose 'hamburger'
-    expect(customer.choices).to include('cheeseburger' => [1, 5.5], 'hamburger' => [1, 5])
+    expect(customer.choices).to include('cheeseburger' => [1, 5.5],
+                                        'hamburger' => [1, 5])
   end
 
   scenario 'select two hamburgers' do
