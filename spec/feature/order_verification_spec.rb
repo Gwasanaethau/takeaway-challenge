@@ -9,8 +9,7 @@ feature 'customer can verify the order total' do
     menu.add 'hamburger', 5
     customer = Customer.new menu
     customer.choose 'hamburger'
-    order = Order.new customer
-    expect(order.sum_total).to eq 5
+    expect(Bill.sum_total customer).to eq 5
   end
 
   scenario 'when ordering a cheeseburger' do
@@ -18,7 +17,6 @@ feature 'customer can verify the order total' do
     menu.add 'cheeseburger', 5.5
     customer = Customer.new menu
     customer.choose 'cheeseburger'
-    order = Order.new customer
-    expect(order.sum_total).to eq 5.5
+    expect(Bill.sum_total customer).to eq 5.5
   end
 end
