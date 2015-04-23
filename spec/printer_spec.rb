@@ -1,13 +1,9 @@
 require 'printer'
 
-# class PrinterTest
-#   include Printer
-# end
-
 describe Printer do
 
   it 'shows hamburger as the only item' do
-    menu = double(:menu, dishes: { 'hamburger' => 5})
+    menu = double(:menu, dishes: { 'hamburger' => 5 })
     expect(subject.show_menu menu).to eq 'hamburger: €5'
   end
 
