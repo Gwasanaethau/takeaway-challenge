@@ -1,7 +1,6 @@
 require 'customer'
 
 describe Customer do
-
   it 'does not allow items off the menu to be chosen' do
     menu = double(:menu, dishes: { 'hamburger' => 5 })
     expect { described_class.new(menu).choose 'cheeseburger' }.to raise_error
