@@ -6,8 +6,8 @@ module Printer
   end
 
   def self.show_order order
-    order.dishes.each.inject('') do |text, (dish, quantity)|
-      text += "#{quantity}× #{dish}\n"
+    order.dishes.each.inject('') do |text, (dish, quantity_and_price)|
+      text += "#{quantity_and_price[0]}× #{dish}\n"
     end.chomp
   end
 end

@@ -1,13 +1,13 @@
 class Order
-  attr_reader :customer
+  attr_reader :dishes
 
   def initialize customer
-    @customer = customer
+    @dishes = customer.choices
   end
 
   def sum_total
-    customer.choices.inject(0) do |sum, (dish, quantity)|
-      sum += quantity * customer.menu.dishes[dish]
+    dishes.inject(0) do |sum, (dish, quantity_and_price)|
+      sum += quantity_and_price.inject(&:*)
     end
   end
 end

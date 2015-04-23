@@ -8,6 +8,6 @@ class Customer
 
   def choose dish, quantity = 1
     fail unless menu.dishes[dish]
-    choices[dish] = quantity
+    choices[dish] = [quantity, menu.dishes[dish]]
   end
 end
