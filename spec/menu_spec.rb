@@ -14,5 +14,4 @@ describe Menu do
     subject.add 'cheeseburger', 5.5
     expect(Printer.show subject).to eq 'cheeseburger: €5.5'
   end
-
 end
